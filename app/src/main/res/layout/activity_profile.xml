@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- TOP BAR -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/notificationBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+                app:layout_constraintHorizontal_bias="0.938"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/notifications"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_notifications" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/sellerBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/seller"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_seller" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profileBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/profiles"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_user" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:contentDescription="Back">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingTop="5dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+
+        <!-- PROFILE IMAGE -->
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_searchstyle"
+                android:src="@drawable/ic_user" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Change Profile"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#66000000" />
+        </FrameLayout>
+
+        <!-- USERNAME -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your username"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/usernameInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_searchstyle"
+            android:padding="12dp"
+            android:hint="username"
+            android:inputType="text" />
+
+        <!-- FULL NAME -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your fullname"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/fullnameInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_searchstyle"
+            android:padding="12dp"
+            android:hint="Full name"
+            android:inputType="textPersonName" />
+
+        <!-- EMAIL -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your email"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_searchstyle"
+            android:padding="12dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <!-- PASSWORD -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your password"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_searchstyle"
+            android:padding="12dp"
+            android:hint="••••••••"
+            android:inputType="textPassword" />
+
+        <!-- SAVE BUTTON -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="32dp">
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save Changes"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

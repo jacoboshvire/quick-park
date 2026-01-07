@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Base.Theme.Quickpark" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- App colors (optional, safe) -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Material shape system (CORRECT WAY) -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Quickpark.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Quickpark.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Quickpark.Large</item>
+
+    </style>
+
+    <style name="Theme.Quickpark" parent="Base.Theme.Quickpark" />
+
+    <!-- Shape styles -->
+    <style name="ShapeAppearance.Quickpark.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Quickpark.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">14dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Quickpark.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- MAP -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 🔍 TOP SEARCH BAR -->
+
+    <!-- BOTTOM SHEET -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/notificationBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/searchBar"
+            app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/notifications"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_notifications" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sellerBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/searchBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/seller"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_seller" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/input_bg"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/searchBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/profiles"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_user" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_searchstyle"
+            android:orientation="horizontal"
+            android:padding="1dp"
+            app:layout_anchor="@+id/searchBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.832"
+            tools:ignore="NotSibling">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
+                android:padding="12dp"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/searchInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins"
+                android:hint="Search location or postcode"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="8dp"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/parkingRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

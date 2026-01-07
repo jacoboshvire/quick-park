@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/notificationBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+                app:layout_constraintHorizontal_bias="0.938"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/notifications"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_notifications" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/sellerBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/seller"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_seller" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profileBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_bg"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/profiles"
+                    android:layout_width="25dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_user" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:contentDescription="Back">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingTop="5dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Post"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Location"
+            android:layout_marginTop="20dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/locationInput"
+                android:hint="Location"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="postal  code"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/postcodeInput"
+                android:hint="Postal code"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Phone number"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/phoneInput"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Number"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/priceInput"
+                android:hint="Price (£)"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Account name"
+            android:layout_marginTop="1dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/accountNameInput"
+                android:hint="Account name"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Account number"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/accountNumberInput"
+                android:hint="Account number"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Number"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/sortCodeInput"
+                android:hint="Sort code"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Time needed (e.g now)"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/timeNeededInput"
+                android:hint="Time needed (e.g now)"
+                android:background="@android:color/transparent"
+                android:layout_height="56dp"
+                android:layout_width="match_parent"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/poppins"
+            android:text="Duration (hours)"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="1dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp">
+            <EditText
+                android:id="@+id/durationInput"
+                android:hint="Duration (hours)"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:layout_height="56dp"
+                android:layout_width="match_parent"/>
+
+        </FrameLayout>
+
+
+        <!-- IMAGE PICKER -->
+        <FrameLayout
+            android:id="@+id/imagePicker"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/dashed_border"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Upload image"
+                android:gravity="center"/>
+        </FrameLayout>
+
+        <!-- SUBMIT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/button_bg"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:text="Let’s go"
+                android:fontFamily="@font/poppins"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
