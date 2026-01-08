@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.quickpark.R
 import com.example.quickpark.data.network.SellerItem
 
-class SellerAdapter : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
+class SellerAdapter(
+    private val onItemClick: (SellerItem) -> Unit
+) : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
 
     private val items = mutableListOf<SellerItem>()
 
@@ -18,35 +20,27 @@ class SellerAdapter : RecyclerView.Adapter<SellerAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_parking, parent, false)
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount() = items.size
 
-    override fun onBindViewHolder(
-        holder: ViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        private val locationText: TextView =
-            itemView.findViewById(R.id.locationText)
-
-        private val priceText: TextView =
-            itemView.findViewById(R.id.priceText)
-
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: SellerItem) {
-            locationText.text = item.locations
-            priceText.text = "£${item.price}"
+            itemView.findViewById<TextView>(R.id.locationText).text = item.locations
+            itemView.findViewById<TextView>(R.id.priceText).text = "£${item.price}"
+
+            itemView.setOnClickListener {
+                onItemClick(item)
+            }
         }
     }
 }
+

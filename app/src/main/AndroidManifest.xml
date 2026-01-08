@@ -31,6 +31,8 @@
             android:exported="false" />
         <activity android:name=".ui.profile.ProfileActivity"/>
         <activity android:name=".ui.seller.SellerActivity"/>
+        <activity android:name=".ui.seller.SellerDetailsActivity"/>
+        <activity android:name=".ui.notification.NotificationActivity"/>
 
         <!-- Main (Launcher) Activity -->
         <activity

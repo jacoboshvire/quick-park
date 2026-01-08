@@ -78,6 +78,33 @@ data class SellerUser(
     val avatar: String
 )
 
+data class BookingResponse(
+    val message: String,
+    val booking: Booking
+)
+
+data class Booking(
+    val _id: String,
+    val status: String,
+    val sellerPost: String,
+    val buyer: String
+)
+
+data class ApiMessage(
+    val message: String
+)
+
+data class NotificationItem(
+    @SerializedName("_id")
+    val id: String,
+    val title: String,
+    val body: String,
+    val read: Boolean,
+    val type: String,
+    val createdAt: String,
+    val data: Map<String, String>
+)
+
 /* =========================
    API SERVICE
 ========================= */
@@ -131,4 +158,34 @@ interface ApiService {
         @Path("id") id: String
     ): Response<SellerItem>
 
+    @POST("booking/book/{sellerId}")
+    suspend fun bookParking(
+        @Header("Authorization") token: String,
+        @Path("sellerId") sellerId: String
+    ): Response<BookingResponse>
+
+    @PUT("booking/booking/{id}/accept")
+    suspend fun acceptBooking(
+        @Header("Authorization") token: String,
+        @Path("id") bookingId: String
+    ): Response<ApiMessage>
+
+    @PUT("booking/booking/{id}/reject")
+    suspend fun rejectBooking(
+        @Header("Authorization") token: String,
+        @Path("id") bookingId: String
+    ): Response<ApiMessage>
+
+    @GET("notification")
+    suspend fun getNotifications(): Response<List<NotificationItem>>
+
+    @PUT("notification/{id}/read")
+    suspend fun markNotificationRead(
+        @Path("id") id: String
+    ): Response<Unit>
+
+    @DELETE("notification/{id}")
+    suspend fun deleteNotification(
+        @Path("id") id: String
+    ): Response<Unit>
 }
