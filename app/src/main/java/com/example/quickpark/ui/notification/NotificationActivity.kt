@@ -1,13 +1,17 @@
 package com.example.quickpark.ui.notification
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quickpark.R
 import com.example.quickpark.data.network.RetrofitClient
+import com.example.quickpark.ui.profile.ProfileActivity
+import com.example.quickpark.ui.seller.SellerActivity
 import kotlinx.coroutines.launch
 
 class NotificationActivity : AppCompatActivity() {
@@ -20,6 +24,14 @@ class NotificationActivity : AppCompatActivity() {
 
         val recycler = findViewById<RecyclerView>(R.id.notificationRecycler)
         recycler.layoutManager = LinearLayoutManager(this)
+
+        findViewById<LinearLayout>(R.id.profileBtn).setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
+            startActivity(Intent(this, SellerActivity::class.java))
+        }
 
         adapter = NotificationAdapter { notification ->
             markAsRead(notification.id)

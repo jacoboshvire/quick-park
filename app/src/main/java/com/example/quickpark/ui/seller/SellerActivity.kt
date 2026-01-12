@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.quickpark.R
 import com.example.quickpark.data.local.TokenManager
 import com.example.quickpark.data.network.RetrofitClient
+import com.example.quickpark.ui.notification.NotificationActivity
 import com.example.quickpark.ui.profile.ProfileActivity
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
@@ -41,6 +42,10 @@ class SellerActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.submitBtn).setOnClickListener {
             submitSeller()
+        }
+
+        findViewById<LinearLayout>(R.id.notificationBtn).setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
     }
 

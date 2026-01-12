@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.quickpark.R
 import com.example.quickpark.data.network.RetrofitClient
+import com.example.quickpark.ui.notification.NotificationActivity
 import com.example.quickpark.ui.seller.SellerActivity
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
@@ -45,6 +46,14 @@ class ProfileActivity : AppCompatActivity() {
 
         findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
             startActivity(Intent(this, SellerActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
+            startActivity(Intent(this, SellerActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.notificationBtn).setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
 
         usernameInput = findViewById(R.id.usernameInput)
