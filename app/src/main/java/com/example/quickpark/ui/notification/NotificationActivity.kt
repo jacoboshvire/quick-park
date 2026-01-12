@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quickpark.R
 import com.example.quickpark.data.network.RetrofitClient
+import com.example.quickpark.ui.dashboard.DashboardActivity
 import com.example.quickpark.ui.profile.ProfileActivity
 import com.example.quickpark.ui.seller.SellerActivity
 import kotlinx.coroutines.launch
@@ -31,6 +32,10 @@ class NotificationActivity : AppCompatActivity() {
 
         findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
             startActivity(Intent(this, SellerActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.mainBackBtn).setOnClickListener{
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
 
         adapter = NotificationAdapter { notification ->

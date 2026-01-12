@@ -1,5 +1,6 @@
 package com.example.quickpark.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,9 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        findViewById<TextView>(R.id.createAccountText).setOnClickListener{
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
 
 
         val fullnameEt = findViewById<TextInputEditText>(R.id.fullnameInput)

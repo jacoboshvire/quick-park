@@ -86,7 +86,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:contentDescription="Back">
+            android:contentDescription="Back"
+            android:id="@+id/mainBackBtn">
 
             <ImageView
                 android:id="@+id/backBtn"

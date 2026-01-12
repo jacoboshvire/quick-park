@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.quickpark.R
 import com.example.quickpark.data.network.RetrofitClient
+import com.example.quickpark.ui.dashboard.DashboardActivity
 import com.example.quickpark.ui.notification.NotificationActivity
 import com.example.quickpark.ui.seller.SellerActivity
 import kotlinx.coroutines.launch
@@ -46,6 +47,10 @@ class ProfileActivity : AppCompatActivity() {
 
         findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
             startActivity(Intent(this, SellerActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.mainBackBtn).setOnClickListener{
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
 
         findViewById<LinearLayout>(R.id.sellerBtn).setOnClickListener {
