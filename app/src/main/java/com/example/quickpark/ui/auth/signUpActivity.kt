@@ -11,6 +11,11 @@ import kotlinx.coroutines.launch
 import com.google.android.material.textfield.TextInputEditText
 
 class SignUpActivity : AppCompatActivity() {
+    private lateinit var fullnameEt: TextInputEditText
+    private lateinit var emailEt: TextInputEditText
+    private lateinit var usernameEt: TextInputEditText
+    private lateinit var passwordEt: TextInputEditText
+    private lateinit var confirmPasswordEt: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +31,12 @@ class SignUpActivity : AppCompatActivity() {
 
         signUpBtn.setOnClickListener {
 
-            val fullname = fullnameEt.text.toString().trim()
-            val username = usernameEt.text.toString().trim()
-            val email = emailEt.text.toString().trim()
-            val password = passwordEt.text.toString()
-            val confirmPassword = confirmEt.text.toString()
+            val fullname = fullnameEt.text?.toString()?.trim() ?: ""
+            val email = emailEt.text?.toString()?.trim() ?: ""
+            val username = usernameEt.text?.toString()?.trim() ?: ""
+            val password = passwordEt.text?.toString()?.trim() ?: ""
+            val confirmPassword = confirmEt.text?.toString()?.trim() ?: ""
+
 
             // 🔒 Validation
             if (
