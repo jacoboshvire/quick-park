@@ -105,11 +105,34 @@ data class NotificationItem(
     val data: Map<String, String>
 )
 
+data class SignUpRequest(
+    val fullname: String,
+    val username: String,
+    val email: String,
+    val password: String,
+    val confirmPassword: String,
+    val role: String = "USER"
+)
+
+data class SignUpResponse(
+    val _id: String,
+    val fullname: String,
+    val username: String,
+    val email: String,
+    val role: String
+)
+
+
 /* =========================
    API SERVICE
 ========================= */
 
 interface ApiService {
+    // -------- SIGN UP --------
+    @POST("user")
+    suspend fun signUp(
+        @Body request: SignUpRequest
+    ): Response<SignUpResponse>
 
     // 🔐 LOGIN
     @POST("user/login")
